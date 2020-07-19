@@ -4,6 +4,11 @@ import intel.ICaculate;
 import intel.impl.CaculateImpl;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @ClassName TestGeneric
  * @Description: TODO
@@ -14,17 +19,23 @@ import org.junit.Test;
 public class TestGeneric {
 
     @Test
-    public void testGen(){
-        ICaculate<Integer,Integer> caculate1 = new CaculateImpl<Integer, Integer>();
+    public void testGen() {
+        /*ICaculate<Integer, Integer> caculate1 = new CaculateImpl<Integer, Integer>();
         Integer num = caculate1.getResult(8);
         System.out.println(num);
 
-        ICaculate<String,Integer> caculate2 = new CaculateImpl<String, Integer>();
+        ICaculate<String, Integer> caculate2 = new CaculateImpl<String, Integer>();
         Integer hashCode = caculate2.getResult("j");
-        System.out.println(hashCode);
+        System.out.println(hashCode);*/
 
-        ICaculate<String,Integer> caculate3 = new CaculateImpl<String, Integer>();
-        Integer hcode = caculate3.caculate("p");
-        System.out.println(hcode);
+        int count =1;
+        String str = "abcdefghigklmnopqrstuvwxyz";
+        ICaculate<String, Integer> caculate3 = new CaculateImpl<String, Integer>();
+        List<String> stringList = Arrays.asList(str.split(""));
+
+        for (String s : stringList) {
+            Integer hcode = caculate3.caculate(s);
+            System.out.println((count++)+"----------------"+hcode);
+        }
     }
 }
