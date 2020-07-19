@@ -20,7 +20,11 @@ public class TestGeneric {
         System.out.println(num);
 
         ICaculate<String,Integer> caculate2 = new CaculateImpl<String, Integer>();
-        Integer hashCode = caculate2.getResult("f");
+        Integer hashCode = caculate2.getResult("j");
         System.out.println(hashCode);
+
+        ICaculate<String,Integer> caculate3 = new CaculateImpl<String, Integer>();
+        Integer hcode = caculate3.caculate("p");
+        System.out.println(hcode);
     }
 }

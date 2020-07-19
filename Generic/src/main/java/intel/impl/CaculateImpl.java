@@ -9,15 +9,27 @@ import intel.ICaculate;
  * @Date 2020/7/19 09:44
  * @Version V1.0
  **/
-public class CaculateImpl<K,T extends Integer> implements ICaculate<K,T> {
+public class CaculateImpl<T,K extends Integer> implements ICaculate<T,K> {
 
-    public T getResult(K k) {
-        T t=null;
-        if(k instanceof Integer){
-            t= (T) k;
-        }else if(k instanceof String) {
-            t = (T) Integer.valueOf(k.hashCode());
+    @Override
+    public K getResult(T t) {
+        K k=null;
+        if(t instanceof Integer){
+            k= (K) t;
+        }else if(t instanceof String) {
+            k = (K) Integer.valueOf(t.hashCode());
         }
-        return t;
+        return k;
+    }
+
+    @Override
+    public <K> K caculate(T t) {
+        K k=null;
+        if(t instanceof Integer){
+            k= (K) t;
+        }else if(t instanceof String) {
+            k = (K) Integer.valueOf(t.hashCode());
+        }
+        return k;
     }
 }

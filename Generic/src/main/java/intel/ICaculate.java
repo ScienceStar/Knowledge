@@ -9,4 +9,5 @@ package intel;
  **/
 public interface ICaculate<T extends Object,K extends Integer> {
     public K getResult(T t);
+    public <K> K caculate(T t);
 }
